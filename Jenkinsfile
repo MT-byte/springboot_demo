@@ -19,5 +19,17 @@ pipeline {
                 sh "mvn spring-boot:start"
             }
         }
+        stage('Package') {
+            steps {
+                sh "mvn war:war"
+            }
+        }
+    }
+
+    post {
+        success {
+            archiveArtifacts allowEmptyArchive: true,
+            artifacts: '**/demo*.war'
+        }
     }
 }
