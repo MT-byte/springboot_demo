@@ -16,7 +16,7 @@ pipeline {
         }
         stage('StartWebApp') {
             steps {
-                sh 'mvn spring-boot:start'
+                //sh 'mvn spring-boot:start'
             }
         }
         stage('Package') {
